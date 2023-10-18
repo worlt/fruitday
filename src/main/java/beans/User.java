@@ -4,15 +4,21 @@ public class User {
     //用户id
     private int id;
     //用户名
-    private  String name;
+    private String uname;
     //用户手机号
     private String phone;
-    //用户余额
-    private double balance;
     //密码
     private String password;
     //地址
     private String address;
+    //用户余额
+    private double balance;
+
+    public User(String uname, String phone, String password) {
+        this.uname = uname;
+        this.phone = phone;
+        this.password = password;
+    }
 
     public int getId() {
         return id;
@@ -23,11 +29,11 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return uname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String uname) {
+        this.uname = uname;
     }
 
     public String getPhone() {
@@ -66,11 +72,23 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + uname + '\'' +
                 ", phone='" + phone + '\'' +
                 ", balance=" + balance +
                 ", password='" + password + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    public User(int id, String uname, String phone, String password, String address, double balance) {
+        this.id = id;
+        this.uname = uname;
+        this.phone = phone;
+        this.password = password;
+        this.address = address;
+        this.balance = balance;
+    }
+
+    public User() {
     }
 }
