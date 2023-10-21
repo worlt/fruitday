@@ -21,7 +21,7 @@ public interface UserDao {
     public int update(User user);
 
     //删除
-    public int delete(int id);
+    public int del(int id);
 
 
 }

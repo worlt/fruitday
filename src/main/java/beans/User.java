@@ -4,21 +4,17 @@ public class User {
     //用户id
     private int id;
     //用户名
-    private String uname;
+    private String email;
     //用户手机号
     private String phone;
     //密码
-    private String password;
-    //地址
-    private String address;
-    //用户余额
-    private double balance;
-
-    public User(String uname, String phone, String password) {
-        this.uname = uname;
-        this.phone = phone;
-        this.password = password;
-    }
+    private String pwd;
+    //用户名
+    private String uname;
+//    //地址
+//    private String address;
+//    //用户余额
+//    private double balance;
 
     public int getId() {
         return id;
@@ -28,12 +24,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return uname;
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(String uname) {
-        this.uname = uname;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {
@@ -44,51 +40,88 @@ public class User {
         this.phone = phone;
     }
 
-    public double getBalance() {
-        return balance;
+    public String getPwd() {
+        return pwd;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUname() {
+        return uname;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 
-    public String getAddress() {
-        return address;
-    }
+//    public String getAddress() {
+//        return address;
+//    }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+//    public void setAddress(String address) {
+//        this.address = address;
+//    }
+
+//    public double getBalance() {
+//        return balance;
+//    }
+
+//    public void setBalance(double balance) {
+//        this.balance = balance;
+//    }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + uname + '\'' +
+                ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", balance=" + balance +
-                ", password='" + password + '\'' +
-                ", address='" + address + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", uname='" + uname + '\'' +
                 '}';
     }
 
-    public User(int id, String uname, String phone, String password, String address, double balance) {
+
+    public User(int id, String email, String phone, String pwd, String uname) {
         this.id = id;
-        this.uname = uname;
+        this.email = email;
         this.phone = phone;
-        this.password = password;
-        this.address = address;
-        this.balance = balance;
+        this.pwd = pwd;
+        if(uname.equals("")||uname==null)
+            this.uname=email;
+        else
+            this.uname = uname;
+    }
+
+    public User(String email, String phone, String pwd, String uname) {
+        this.email = email;
+        this.phone = phone;
+        this.pwd = pwd;
+        if(uname.equals("")||uname==null)
+            this.uname=email;
+        else
+            this.uname = uname;
+    }
+
+    public User(int id) {
+        this.id = id;
+        this.email = null;
+        this.phone = null;
+        this.pwd = null;
+        this.uname=null;
+    }
+
+    public User(String email, String phone, String pwd) {
+        this.email = email;
+        this.phone = phone;
+        this.pwd = pwd;
+        this.uname=email;
+
     }
 
     public User() {
+        super();
     }
 }

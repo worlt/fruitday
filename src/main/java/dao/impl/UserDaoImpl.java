@@ -2,9 +2,10 @@ package dao.impl;
 
 import beans.User;
 import dao.UserDao;
-import dbutils.DBHelper;
+//import dbutils.DBHelper;
 import dbutils.DruidUtils;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.Connection;
@@ -41,8 +42,8 @@ public class UserDaoImpl implements UserDao {
 ////            DBHelper.closeAll(connection, pstmt, null);
 //            DruidUtils.closeAll(connection, pstmt, null);
 //        }
-        String sql = "insert into user (uname,phone,balance,password,address) values (?,?,?,?,?)";
-        Object[] params = {user.getName(),user.getPhone(),user.getBalance(),user.getPassword(),user.getAddress()};
+        String sql = "insert into user (email,phone,pwd,uname) values (?,?,?,?)";
+        Object[] params = {user.getEmail(),user.getPhone(),user.getPwd(),user.getUname()};
         try {
             int update = queryRunner.update(sql, params);
             return update;
@@ -83,10 +84,10 @@ public class UserDaoImpl implements UserDao {
 ////            DBHelper.closeAll(connection, pstmt, null);
 //            DBHelper.closeAll(connection, pstmt, null);
 //        }
-        String sql = "iSELECT * FROM USER WHERE uname = ? OR phone = ?";
-        Object[] params = {str,str};
+        String sql = "SELECT * FROM USER WHERE email = ? OR phone = ?";
+        Object[] params = {str, str}; // 假设str是email或phone的实际值
         try {
-            User user = (User) queryRunner.query(sql, new BeanListHandler<User>(User.class));
+            User user = queryRunner.query(sql, new BeanHandler<User>(User.class), params);
             return user;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -109,7 +110,7 @@ public class UserDaoImpl implements UserDao {
         String sql = "select * from user where id = ?";
         Object[] params = {id};
         try {
-            User user = (User) queryRunner.query(sql, new BeanListHandler<User>(User.class), params);
+            User user = queryRunner.query(sql, new BeanHandler<User>(User.class), params);
             return user;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -118,8 +119,8 @@ public class UserDaoImpl implements UserDao {
 
     //更新
     public int update(User user) {
-        String sql = "update user set uname=?,phone=?,balance=?,password=?address=? where id=? ";
-        Object[] params = {user.getName(),user.getPhone(),user.getBalance(),user.getPassword(),user.getAddress()};
+        String sql = "update user set email=?,phone=?,pwd=?,uname=? where id=? ";
+        Object[] params = {user.getEmail(),user.getPhone(),user.getPwd(),user.getUname(),user.getId()};
         try {
             int update = queryRunner.update(sql, params);
             return update;
@@ -129,7 +130,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     //删除
-    public int delete(int id) {
+    public int del(int id) {
         String sql = "delete from user where id = ?";
         Object[] params = {id};
         try {

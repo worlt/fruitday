@@ -4,7 +4,7 @@ import beans.User;
 
 public interface UserService {
     //注册用户
-    public User add(User user);
+    public  User add(User user);
 
     /*
     根据用户名和密码登录

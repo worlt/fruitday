@@ -1,11 +1,11 @@
 package beans;
 
 
-public class cart {
+public class Cart {
     //用户id
     private int uid;
     //商品id
-    private int gid;
+    private int fid;
     //是否收藏
     private boolean isStar;
     //是否加入购物车
@@ -19,12 +19,12 @@ public class cart {
         this.uid = uid;
     }
 
-    public int getGid() {
-        return gid;
+    public int getFid() {
+        return fid;
     }
 
-    public void setGid(int gid) {
-        this.gid = gid;
+    public void setFid(int fid) {
+        this.fid = fid;
     }
 
     public boolean isStar() {
@@ -47,7 +47,7 @@ public class cart {
     public String toString() {
         return "cart{" +
                 "uid=" + uid +
-                ", gid=" + gid +
+                ", fid=" + fid +
                 ", isStar=" + isStar +
                 ", isCart=" + isCart +
                 '}';

@@ -1,5 +1,6 @@
 package dbutils;
 
+
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.alibaba.druid.util.DruidWebUtils;
@@ -73,6 +74,4 @@ public class DruidUtils {
             }
         }
     }
-
-
 }

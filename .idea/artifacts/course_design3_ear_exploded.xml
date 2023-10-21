@@ -2,10 +2,12 @@
   <artifact type="exploded-ear" name="course_design3:ear exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/course_design3_ear_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="course_design3/javaeeApplication/javaEEApplication" />
       <element id="directory" name="lib">
-        <element id="library" level="application" name="lib" />
+        <element id="library" level="project" name="lib" />
+        <element id="library" level="project" name="lib1" />
       </element>
+      <element id="module-output" name="course_design3" />
+      <element id="javaee-facet-resources" facet="course_design3/web/Web" />
     </root>
   </artifact>
 </component>

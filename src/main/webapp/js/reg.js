@@ -1,21 +1,21 @@
-function isUsername() {
-	var username = document.getElementById("username").value;
-	var error = document.getElementById("isUsername");
-	var reg = /^[A-Za-z0-9_\u4e00-\u9fa5]+$/;  // 此正则表达式允许字母、数字、下划线和中文字符作为用户名字符
-
-	if (username === "") {
-		error.innerText = "用户名不能为空!";
-	} else {
-		if (reg.test(username)) {
-			document.getElementById("username").style.border = "1px solid #669933";
-			error.innerText = "";
+function isEmail(){
+	var email=document.getElementById("email").value;
+	var error=document.getElementById("isEmail");
+	var reg=/^[A-Za-z]+\w+(-|\.|)+\w*\@\w+((\.|-)\w+)*\.\w+/;
+	if(email=="")
+		error.innerText="邮箱不能为空!";
+	else
+	{
+		if(reg.test(email))
+		{
+			document.getElementById("email").style.border="1px solid #669933";
+			error.innerText="";
 			return true;
-		} else {
-			error.innerText = "用户名格式不正确！";
 		}
+		else
+			error.innerText="邮箱格式不正确！";
 	}
-
-	document.getElementById("username").style.border = "1px solid red";
+	document.getElementById("email").style.border="1px solid red";
 	return false;
 }
 
@@ -84,7 +84,7 @@ function isPwd2(){
 
 function isReg()
 {
-	if(isUsername()&&isPhone()&&isPwd1()&&isPwd2())
+	if(isEmail()&&isPhone()&&isPwd1()&&isPwd2())
 		document.getElementById("regForm").submit();
 	else
 		alert("请完成注册单!");
