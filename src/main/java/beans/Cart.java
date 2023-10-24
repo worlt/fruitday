@@ -31,7 +31,7 @@ public class Cart {
         return isStar;
     }
 
-    public void setStar(boolean star) {
+    public void setIsStar(boolean star) {
         isStar = star;
     }
 
@@ -39,7 +39,7 @@ public class Cart {
         return isCart;
     }
 
-    public void setCart(boolean cart) {
+    public void setIsCart(boolean cart) {
         isCart = cart;
     }
 

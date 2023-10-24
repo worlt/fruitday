@@ -2,13 +2,8 @@
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="beans.Fruit" %>
 <%@ page import="beans.User" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: xi
-  Date: 2015/10/3
-  Time: 19:37
-  To change this template use File | Settings | File Templates.
---%>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,7 +12,7 @@
   <link rel="stylesheet" type="text/css" href="css/main.css"/>
   <link rel="stylesheet" type="text/css" href="css/index.css"/>
   <script src="js/imgs.js" type="text/javascript" charset="utf-8"></script>
-<%--    <jsp:include page="/FruitServlet?key=hot"></jsp:include>--%>
+    <jsp:include page="/FruitServlet?key=hot"></jsp:include>
     <jsp:include page="head/head.jsp"></jsp:include>
 
 </head>
@@ -60,25 +55,25 @@
       </div>
     </div>
 
-<%--<%--%>
-<%--  for(Fruit fruit:hotFruits)--%>
-<%--  {--%>
-<%--    out.print("    <div class=\"fruit_box\">\n" +--%>
-<%--            "      <div class=\"fruit_img\">\n" +--%>
-<%--            "        <a href=\""+request.getContextPath()+"/FruitServlet?key=info&id="+id+"&fid="+fruit.getFid()+"\"><img src=\"img/fruits/"+fruit.getFid()+"/(1).jpg\" /></a>\n" +--%>
-<%--            "      </div>\n" +--%>
-<%--            "      <div class=\"fruit_name\">\n" +--%>
-<%--            "        <a href=\""+request.getContextPath()+"/FruitServlet?key=info&id="+id+"&fid="+fruit.getFid()+"\">"+fruit.getFname()+"</a>\n" +--%>
-<%--            "      </div>\n" +--%>
-<%--            "      <div class=\"fruit_num\">\n" +--%>
-<%--            "        "+fruit.getSpec()+"\n" +--%>
-<%--            "      </div>\n" +--%>
-<%--            "      <div class=\"fruit_mon\">\n" +--%>
-<%--            "        "+fruit.getUp()+"\n" +--%>
-<%--            "      </div>\n" +--%>
-<%--            "    </div>");--%>
-<%--  }--%>
-<%--%>--%>
+<%
+  for(Fruit fruit:hotFruits)
+  {
+    out.print("    <div class=\"fruit_box\">\n" +
+            "      <div class=\"fruit_img\">\n" +
+            "        <a href=\""+request.getContextPath()+"/FruitServlet?key=info&id="+id+"&fid="+fruit.getFid()+"\"><img src=\"img/fruits/"+fruit.getFid()+"/(1).jpg\" /></a>\n" +
+            "      </div>\n" +
+            "      <div class=\"fruit_name\">\n" +
+            "        <a href=\""+request.getContextPath()+"/FruitServlet?key=info&id="+id+"&fid="+fruit.getFid()+"\">"+fruit.getFname()+"</a>\n" +
+            "      </div>\n" +
+            "      <div class=\"fruit_num\">\n" +
+            "        "+fruit.getSpec()+"\n" +
+            "      </div>\n" +
+            "      <div class=\"fruit_mon\">\n" +
+            "        "+fruit.getUp()+"\n" +
+            "      </div>\n" +
+            "    </div>");
+  }
+%>
 
   </div>
 </div>
@@ -87,10 +82,4 @@
 </body>
 </html>
 
-<!--<script language="javascript">
-function getData() {
-window.location.href = "getDataServlet";
-}
-</script>
-<BODY onload="getData()">-->
 

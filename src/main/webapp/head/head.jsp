@@ -1,11 +1,5 @@
 <%@ page import="beans.User" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: xi
-  Date: 2015/10/3
-  Time: 19:39
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -40,7 +34,7 @@
                   "        <div class=\"star\">\n" +
                   "          <div class=\"star_img\">\n" +
                   "          </div>\n" +
-                  "          <div class=\"toStar\"><a href=\""+request.getContextPath()+"/ShopServlet?key=show&id="+user.getId()+"&boob=star\">我的关注</a>\n" +
+                  "          <div class=\"toStar\"><a href=\""+request.getContextPath()+"/cartServlet?key=show&id="+user.getId()+"&boob=star\">我的关注</a>\n" +
                   "          </div>\n" +
                   "        </div>\n" +
                   "      </div>");
@@ -61,8 +55,8 @@
       </div>
 
       <div class="ser">
-        <form action=<%=request.getContextPath()%>/SELServlet?selkey=ser method="post" >
-          <input type="text" name="ser" id="ser_border" value="苹果" />
+        <form action=<%=request.getContextPath()%>/searchServlet?key=search method="post" >
+          <input type="text" name="selkey" id="ser_border" value="" />
           <input type="submit" name="ser_button" id="ser_button" value="搜索" />
         </form>
       </div>
@@ -70,7 +64,7 @@
       <div class="shopcart">
         <div class="cart_img"></div>
         <div class="cart">
-          <a href=<%=request.getContextPath()%>/ShopServlet?key=show&id=<%=user.getId()%>&boob=cart>我的购物车</a>
+          <a href=<%=request.getContextPath()%>/cartServlet?key=show&id=<%=user.getId()%>&boob=cart>我的购物车</a>
           <div class="cart_num" id="cart_num"><%=num%></div>
         </div>
         <div class="cart_to">></div>
@@ -84,7 +78,7 @@
     <div class="con">
       <ul class="hmenu_ul">
         <li><a href="index.jsp">首页</a></li>
-        <li><a href=<%=request.getContextPath()%>/SELServlet?selkey=all>全部商品</a></li>
+        <li><a href=<%=request.getContextPath()%>/searchServlet?key=all>全部商品</a></li>
         <li><a href="">进口水果</a></li>
         <li><a href="">国货</a></li>
       </ul>
