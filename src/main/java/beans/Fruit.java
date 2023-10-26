@@ -72,6 +72,18 @@ public class Fruit {
         this.inum = inum;
     }
 
+    public Fruit() {
+    }
+
+    public Fruit(String fname, String spec, double up, String t1, String t2, int inum) {
+        this.fname = fname;
+        this.spec = spec;
+        this.up = up;
+        this.t1 = t1;
+        this.t2 = t2;
+        this.inum = inum;
+    }
+
     @Override
     public String toString() {
         return "Fruit{" +

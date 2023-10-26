@@ -1,27 +1,23 @@
 var unum=0;
 var fnum=0;
-function sss(t)
-{
-	if(t=="u")
-	{
+function sss(t) {
+	if (t === "u") {
 		unum++;
-		var u=document.getElementById("user_list");
-		if(unum%2==1)
-			u.style.display="none";
+		var u = document.getElementById("user_list");
+		if (unum % 2 === 0)
+			u.style.display = "none";
 		else
-			u.style.display="block";
-	}
-	else
-	{
+			u.style.display = "block";
+	} else {
 		fnum++;
-		var f=document.getElementById("fruit_list");
-		if(fnum%2==1)
-			f.style.display="none";
+		var f = document.getElementById("fruit_list");
+		if (fnum % 2 === 0)
+			f.style.display = "none";
 		else
-			f.style.display="block";
+			f.style.display = "block";
 	}
-
 }
+
 
 function ox(s)
 {

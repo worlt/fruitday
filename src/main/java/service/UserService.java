@@ -2,6 +2,8 @@ package service;
 
 import beans.User;
 
+import java.util.List;
+
 public interface UserService {
     //注册用户
     public  User add(User user);
@@ -11,7 +13,16 @@ public interface UserService {
      */
     public User login(String str,String pwd);
 
+    //
+    public List<User> findAll();
 
+    public User findById(int uid);
+
+
+    public boolean update(User user);
+
+
+    public boolean del(int id);
 
 
 }

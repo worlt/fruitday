@@ -15,9 +15,10 @@ a{text-decoration:none;color: #666666;}
 
 /*去掉a的下划线*/
 a {blr:expression(this.onFocus=this.blur())} /*if IE*/
-a {outline:none;}/*if 火狐等现代浏览器浏览器*/ 
+a {outline:none;}/*if 火狐等现代浏览器浏览器*/
 
-div.noss{background-color: #669933;}
+.noss {background-color: #669933;}
+
 
 /*文字*/
 body{color: #666666;font-size: 14px;font-family: arial,"Hiragino Sans GB",sans-serif;}

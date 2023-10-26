@@ -2,6 +2,8 @@ package dao;
 
 import beans.Cart;
 
+import java.util.List;
+
 public interface CartDao {
 
 
@@ -12,12 +14,16 @@ public interface CartDao {
     public int update(int uid,Cart cart);
 
     //
-    public int del(int uid,Cart cart);
+    public int del(int uid,int fid);
 
     //查询是否已存在
     public Cart find(int uid,int fid);
 
+    //根据uid查询购物车列表或者关注列表
+    public List<Cart> findByUid(int uid);
 
+    //根据uid查询购物车列表
+    public List<Cart> findCartByUid(int uid);
 
 
 }

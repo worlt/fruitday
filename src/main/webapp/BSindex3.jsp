@@ -26,13 +26,13 @@
   <div class="mean_ul">
     <div class="mean_li" onclick="sss('u')">用户管理</div>
     <div class="user_list" id="user_list">
-      <div class="mm"><a href="/x-test/BSServlet?key=alluser">全部用户</a></div>
+      <div class="mm"><a href="<%=request.getContextPath()%>/BSServlet?key=alluser">全部用户</a></div>
       <div class="mm"><a href="BSindex2.jsp">添加用户</a></div>
     </div>
     <div class="mean_li" onclick="sss('f')">商品管理</div>
     <div class="fruit_list" id="fruit_list">
-      <div class="mm"><a href="/x-test/BSServlet?key=allfruit">库存水果</a></div>
-      <div class="mm"><a href="/x-test/BSServlet?key=hotfruit">热卖水果</a></div>
+      <div class="mm"><a href="<%=request.getContextPath()%>/BSServlet?key=allfruit">库存水果</a></div>
+      <div class="mm"><a href="<%=request.getContextPath()%>/BSServlet?key=hotfruit">热卖水果</a></div>
       <div class="mm"><a href="BSindex5.jsp">水果入库</a></div>
     </div>
   </div>
@@ -47,25 +47,25 @@
         user3=(User)request.getAttribute("user");
     %>
     <div class="form">
-      <form action=/x-test/BSServlet?key=upuser&id=<%=user3.getId()%> method="post">
+      <form action="<%=request.getContextPath()%>/BSServlet?key=upuser&id=<%=user3.getId()%>" method="post">
         <div class="add">
           <span class="add_tit">用户名 ：</span>
-          <span class="add_text"><input type="text" name="name1" id="name2" value=<%=user3.getUname()%> /></span>
+          <span class="add_text"><input type="text" name="name2" id="name2" value="<%=user3.getUname()%>" /></span>
         </div>
 
         <div class="add">
           <span class="add_tit">邮箱 ：</span>
-          <span class="add_text"><input type="text" name="email2" id="email2" value=<%=user3.getEmail()%> /></span>
+          <span class="add_text"><input type="text" name="email2" id="email2" value="<%=user3.getEmail()%>" /></span>
         </div>
 
         <div class="add">
-          <span class="add_tit">手机 ：</span>
-          <span class="add_text"><input type="text" name="phone2" id="phone2" value=<%=user3.getPhone()%> /></span>
+          <div class="add_tit">手机 ：</div>
+          <span class="add_text"><input type="text" name="phone2" id="phone2"  required value="<%=user3.getPhone()%>" /></span>
         </div>
 
         <div class="add">
           <span class="add_tit">密码 ：</span>
-          <span class="add_text"><input type="text" name="pwd2" id="pwd2" value=<%=user3.getPwd()%> /></span>
+          <span class="add_text"><input type="text" name="pwd2" id="pwd2" value="<%=user3.getPwd()%>" /></span>
         </div>
         <div class="add_sublmit">
           <input type="submit" value="保存"/>
@@ -75,9 +75,9 @@
   </div>
 </div>
 
+
 <div class="gong" id="x4">
-
-
+</div>
 </body>
 </html>
 

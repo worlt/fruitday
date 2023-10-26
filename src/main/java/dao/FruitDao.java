@@ -26,4 +26,6 @@ public interface FruitDao {
     //删除
     public int del(int fid);
 
+
+
 }
