@@ -62,8 +62,8 @@ public class FruitDaoImpl implements FruitDao {
 
     //添加商品
     public int add(Fruit fruit) {
-        String sql = "INSERT INTO fruits(fname,spec,up,t1,t2,inum) VALUES (?,?,?,?,?,?);";
-        Object[] params = {fruit.getFname(),fruit.getSpec(),fruit.getUp(), fruit.getT1(), fruit.getT2(), fruit.getInum()};
+        String sql = "INSERT INTO fruits(fid, fname, spec, up, t1, t2, inum) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        Object[] params = {fruit.getFid(),fruit.getFname(),fruit.getSpec(),fruit.getUp(), fruit.getT1(), fruit.getT2(), fruit.getInum()};
         try {
             int add = queryRunner.update(sql,params);
             return add;

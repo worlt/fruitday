@@ -72,6 +72,17 @@ public class Fruit {
         this.inum = inum;
     }
 
+    public Fruit(int fid, String fname, String spec, double up, String t1, String t2, int inum) {
+        this.fid = fid;
+        this.fname = fname;
+        this.spec = spec;
+        this.up = up;
+        this.t1 = t1;
+        this.t2 = t2;
+        this.inum = inum;
+    }
+
+
     public Fruit() {
     }
 

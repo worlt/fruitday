@@ -25,4 +25,5 @@ public interface FruitService {
 
     //删除
     public boolean del(int fid);
+
 }

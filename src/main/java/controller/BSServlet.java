@@ -1,7 +1,10 @@
 package controller;
 
 
+import beans.Fruit;
 import beans.User;
+import service.FruitService;
+import service.FruitServiceImpl;
 import service.UserService;
 import service.UserServiceImpl;
 
@@ -15,7 +18,7 @@ import java.util.List;
 @WebServlet("/BSServlet")
 public class BSServlet extends BaseServlet {
     private UserService userService = new UserServiceImpl();
-
+    private FruitService fruitService = new FruitServiceImpl();
     //跳转到后台首页
     public String toAdmin(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
@@ -53,6 +56,22 @@ public class BSServlet extends BaseServlet {
         return null;
     }
 
+    //删除用户
+    public String deluser(HttpServletRequest request, HttpServletResponse response){
+        //获取参数
+        String uidStr = request.getParameter("id");
+        int uid = Integer.parseInt(uidStr);
+        //调用业务逻辑层
+        boolean del = userService.del(uid);
+        if (del) {
+            //添加成功
+            return alluser(request,response);
+        }
+        //添加失败
+        return null;
+
+    }
+
 
     //根据uid查询用户
     public String finduser(HttpServletRequest request, HttpServletResponse response){
@@ -83,6 +102,87 @@ public class BSServlet extends BaseServlet {
         return null;
 
     }
+
+    //展示水果列表
+    public String allfruit(HttpServletRequest request, HttpServletResponse response){
+        //调用业务逻辑
+        List<Fruit> all = fruitService.findAll();
+        request.setAttribute("allfruit",all);
+        return "forward:/BSindex4.jsp";
+    }
+
+    //添加商品
+    public String addfruit(HttpServletRequest request, HttpServletResponse response){
+        //获取参数
+        String fid1Str = request.getParameter("fid1");
+        String fname1 = request.getParameter("fname1");
+        String spec1 = request.getParameter("spec1");
+        String up1Str = request.getParameter("up1");
+        String t1 = request.getParameter("t11");
+        String t2 = request.getParameter("t21");
+        String inum1Str = request.getParameter("inum1");
+        int fid = Integer.parseInt(fid1Str);
+        double up1 = Double.parseDouble(up1Str);
+        int inum1 = Integer.parseInt(inum1Str);
+        Fruit fruit = new Fruit(fid,fname1,spec1,up1,t1,t2,inum1);
+        //调用业务逻辑
+        boolean addFruit = fruitService.add(fruit);
+        if (addFruit) {
+            //添加成功
+            return allfruit(request,response);
+        }
+            //添加失败
+            return null;
+    }
+
+    //删除用户
+    public String delfruit(HttpServletRequest request, HttpServletResponse response){
+        //获取参数
+        String fidStr = request.getParameter("fid");
+        int fid = Integer.parseInt(fidStr);
+        //调用业务逻辑层
+        boolean del = fruitService.del(fid);
+        if (del) {
+            //添加成功
+            return allfruit(request,response);
+        }
+        //添加失败
+        return null;
+
+    }
+
+
+    //根据fid来查询商品
+    public String findfruit(HttpServletRequest request, HttpServletResponse response){
+        //获取参数
+        String fidStr = request.getParameter("fid");
+        int fid = Integer.parseInt("fid");
+        //调用业务逻辑
+        Fruit fruit = fruitService.findById(fid);
+        request.setAttribute("fruit",fruit);
+        return "forward:/BSindex6.jsp";
+    }
+
+
+    //更新商品
+    public String upfruit(HttpServletRequest request, HttpServletResponse response){
+        String fname2 = request.getParameter("fname2");
+        String spec2 = request.getParameter("spec2");
+        String up2Str = request.getParameter("up2");
+        String t12 = request.getParameter("t12");
+        String t22 = request.getParameter("t22");
+        String inum2Str = request.getParameter("inum2");
+        double up2 = Double.parseDouble(up2Str);
+        int inum2 = Integer.parseInt(inum2Str);
+
+        Fruit fruit = new Fruit(fname2,spec2,up2,t12,t22,inum2);
+        boolean update = fruitService.update(fruit);
+        if (update){
+            return allfruit(request,response);
+        }
+        return  null;
+    }
+
 
 
 }
