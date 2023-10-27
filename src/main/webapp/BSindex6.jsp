@@ -2,7 +2,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="beans.Fruit" %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -35,7 +34,7 @@
     <div class="mean_li" onclick="sss('f')">商品管理</div>
     <div class="fruit_list" id="fruit_list">
       <div class="mm"><a href="<%=request.getContextPath()%>/BSServlet?key=allfruit">库存水果</a></div>
-<%--      <div class="mm"><a href="<%=request.getContextPath()%>/BSServlet?key=hotfruit">热卖水果</a></div>--%>
+      <%--      <div class="mm"><a href="<%=request.getContextPath()%>/BSServlet?key=hotfruit">热卖水果</a></div>--%>
       <div class="mm"><a href="BSindex5.jsp">水果入库</a></div>
     </div>
   </div>
@@ -52,32 +51,32 @@
       <form action="<%=request.getContextPath()%>/BSServlet?key=upfruit&fid=<%=fruit.getFid()%>" method="post">
         <div class="add">
           <span class="add_tit">水果 ：</span>
-          <span class="add_text"><input type="text" name="fname2" id="fname2" value=<%=fruit.getFname()%> /></span>
+          <span class="add_text"><input type="text" name="fname2" id="fname2" value="<%=fruit.getFname()%>" /></span>
         </div>
 
         <div class="add">
           <span class="add_tit">规格 ：</span>
-          <span class="add_text"><input type="text" name="spec2" id="spec2" value=<%=fruit.getSpec()%> /></span>
+          <span class="add_text"><input type="text" name="spec2" id="spec2" value="<%=fruit.getSpec()%>" /></span>
         </div>
 
         <div class="add">
           <span class="add_tit">单价 ：</span>
-          <span class="add_text"><input type="text" name="up2" id="up2" value=<%=fruit.getUp()%> /></span>
+          <span class="add_text"><input type="text" name="up2" id="up2" value="<%=fruit.getUp()%>" /></span>
         </div>
 
         <div class="add">
           <span class="add_tit">商品简介 ：</span>
-          <span class="add_text"><input type="text" class="long" name="t12" id="t12" value=<%=fruit.getT1()%> /></span>
+          <span class="add_text"><input type="text" class="long" name="t12" id="t12" value="<%=fruit.getT1()%>" /></span>
         </div>
 
         <div class="add">
           <span class="add_tit">温馨提示 ：</span>
-          <span class="add_text"><input type="text" class="long" name="t22" id="t22" value=<%=fruit.getT2()%> class="long"/></span>
+          <span class="add_text"><input type="text" class="long" name="t22" id="t22" value="<%=fruit.getT2()%>" class="long"/></span>
         </div>
 
         <div class="add">
           <span class="add_tit">图片个数 ：</span>
-          <span class="add_text"><input type="text" name="inum2" id="inum2" value=<%=fruit.getInum()%> /></span>
+          <span class="add_text"><input type="text" name="inum2" id="inum2" value="<%=fruit.getInum()%>" /></span>
         </div>
 
         <div class="add_sublmit">
@@ -90,4 +89,3 @@
 
 </body>
 </html>
-

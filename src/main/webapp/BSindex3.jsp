@@ -38,7 +38,6 @@
   </div>
 </div>
 
-
 <div class="gong" id="x3">
   <div class="con">
     <%
@@ -76,8 +75,8 @@
 </div>
 
 
-<div class="gong" id="x4">
-</div>
+<%--<div class="gong" id="x4">--%>
+<%--</div>--%>
 </body>
 </html>
 

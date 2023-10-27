@@ -156,7 +156,7 @@ public class BSServlet extends BaseServlet {
     public String findfruit(HttpServletRequest request, HttpServletResponse response){
         //获取参数
         String fidStr = request.getParameter("fid");
-        int fid = Integer.parseInt("fid");
+        int fid = Integer.parseInt(fidStr);
         //调用业务逻辑
         Fruit fruit = fruitService.findById(fid);
         request.setAttribute("fruit",fruit);
@@ -166,6 +166,8 @@ public class BSServlet extends BaseServlet {
 
     //更新商品
     public String upfruit(HttpServletRequest request, HttpServletResponse response){
+        String fidStr = request.getParameter("fid");
+        int fid = Integer.parseInt(fidStr);
         String fname2 = request.getParameter("fname2");
         String spec2 = request.getParameter("spec2");
         String up2Str = request.getParameter("up2");
@@ -175,13 +177,14 @@ public class BSServlet extends BaseServlet {
         double up2 = Double.parseDouble(up2Str);
         int inum2 = Integer.parseInt(inum2Str);
 
-        Fruit fruit = new Fruit(fname2,spec2,up2,t12,t22,inum2);
+        Fruit fruit = new Fruit(fid, fname2,spec2,up2,t12,t22,inum2); //添加fid参数
         boolean update = fruitService.update(fruit);
         if (update){
-            return allfruit(request,response);
+            return "redirect:/BSServlet?key=allfruit"; //使用重定向
         }
         return  null;
     }
+
 
 
 
