@@ -81,8 +81,8 @@
         <ul class="hmenu_ul">
             <li><a href="index.jsp">首页</a></li>
             <li><a href=<%=request.getContextPath()%>/searchServlet?key=all>全部商品</a></li>
-            <li><a href="">进口水果</a></li>
-            <li><a href="">国货</a></li>
+<%--            <li><a href="">进口水果</a></li>--%>
+<%--            <li><a href="">国货</a></li>--%>
         </ul>
     </div>
 </div>
