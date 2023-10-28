@@ -5,14 +5,17 @@
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="head/css/head.css"/>
-    <jsp:include page="/cartServlet?key=num"></jsp:include>
-    <%
-        User user = new User(0, "", "", "", "");
+    <jsp:include page="cartServlet?key=num"></jsp:include>
+    <% User user = new User(0, "", "", "", "");
         int num = 0;
-        if (session.getAttribute("user") != null)
-            user = (User) session.getAttribute("user");
-        if (request.getAttribute("num") != null)
-            num = (Integer) request.getAttribute("num");
+        try {
+            if (session.getAttribute("user") != null)
+                user = (User) session.getAttribute("user");
+            if (request.getAttribute("num") != null)
+                num = (Integer) request.getAttribute("num");
+        }catch (Exception Q){
+            System.err.println(Q);
+        }
     %>
 </head>
 

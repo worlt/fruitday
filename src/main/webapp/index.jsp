@@ -1,5 +1,4 @@
 <%@ page import="java.util.List" %>
-<%@ page import="java.io.PrintWriter" %>
 <%@ page import="beans.Fruit" %>
 <%@ page import="beans.User" %>
 
@@ -12,8 +11,8 @@
   <link rel="stylesheet" type="text/css" href="css/main.css"/>
   <link rel="stylesheet" type="text/css" href="css/index.css"/>
   <script src="js/imgs.js" type="text/javascript" charset="utf-8"></script>
-    <jsp:include page="/FruitServlet?key=hot"></jsp:include>
-    <jsp:include page="head/head.jsp"></jsp:include>
+    <jsp:include page="FruitServlet?key=hot"></jsp:include>
+<%--    <jsp:include page="head/head.jsp"></jsp:include>--%>
 
 </head>
 <body onload="fimg()" >
@@ -56,6 +55,7 @@
     </div>
 
 <%
+  if (hotFruits!=null){
   for(Fruit fruit:hotFruits)
   {
     out.print("    <div class=\"fruit_box\">\n" +
@@ -72,7 +72,7 @@
             "        "+fruit.getUp()+"\n" +
             "      </div>\n" +
             "    </div>");
-  }
+  }}
 %>
 
   </div>

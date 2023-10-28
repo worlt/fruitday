@@ -46,6 +46,7 @@
     </div>
 
     <%
+      if(fruits!=null){
       for(Fruit fruit:fruits)
       {
         out.print("    <div class=\"shop\">\n" +
@@ -74,7 +75,7 @@
                 "        <a href=\""+request.getContextPath()+"/cartServlet?key=del&id="+user.getId()+"&fid="+fruit.getFid()+"&str=cart\">删除</a>\n" +
                 "      </div>\n" +
                 "    </div>");
-      }
+      }}
     %>
 
     <div class="shop_footer">
