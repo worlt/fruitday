@@ -50,7 +50,6 @@ public class CartServlet extends BaseServlet {
                 }
                 //更新操作
                 cartService.update(uid, cart);
-
             }
             //跳到详情页面
             return "forward:/FruitServlet?key=info&id=" + uid + "&fid=" + fid;

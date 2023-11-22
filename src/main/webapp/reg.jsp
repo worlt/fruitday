@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/rl.css"/>
     <script src="js/reg.js"></script>
     <script>
-        window.onload=function footer_img_non(){
-            document.getElementById("footer_img").style.display="none";
+        window.onload = function footer_img_non() {
+            document.getElementById("footer_img").style.display = "none";
         }
     </script>
 </head>
@@ -17,7 +17,7 @@
     <div class="box">
         <div class="head">
             <a href="index.jsp">
-                <img src="img/logo_login.png" alt="" />
+                <img src="img/logo_login.png" alt=""/>
             </a>
         </div>
 
@@ -28,21 +28,25 @@
                 <div class="xhr"></div>
             </div>
             <form action=<%=request.getContextPath()%>/userServlet?key=register method="post" id="regForm">
-<%--            <form action=<%=request.getContextPath()%>/registerServlet? method="post" id="regForm">--%>
+                <%--            <form action=<%=request.getContextPath()%>/registerServlet? method="post" id="regForm">--%>
                 <div class="text_box">
-                    <div class="main"><div class="name">邮箱：</div>
+                    <div class="main">
+                        <div class="name">邮箱：</div>
                         <input type="text" name="email" id="email" value="" onblur="isEmail()"/>
                         <div id="isEmail" class="iss"></div>
                     </div>
-                    <div class="main"><div class="name">手机号码：</div>
+                    <div class="main">
+                        <div class="name">手机号码：</div>
                         <input type="text" name="phone" id="phone" value="" onblur="isPhone()"/>
                         <div id="isPhone" class="iss"></div>
                     </div>
-                    <div class="main"><div class="name">密码：</div>
+                    <div class="main">
+                        <div class="name">密码：</div>
                         <input type="password" name="pwd1" id="pwd1" value="" onblur="isPwd1()"/>
                         <div id="isPwd1" class="iss"></div>
                     </div>
-                    <div class="main"><div class="name">确定密码：</div>
+                    <div class="main">
+                        <div class="name">确定密码：</div>
                         <input type="password" name="pwd2" id="pwd2" value="" onblur="isPwd2()"/>
                         <div id="isPwd2" class="iss"></div>
                     </div>

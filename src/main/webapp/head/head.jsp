@@ -25,8 +25,8 @@
         <%
             if (user.getId() == 0)
                 out.print("        <div class=\"head_right noLink\" >\n" +
-                        "            <a href=\"login.jsp\">[ 登陆 ]</a>&nbsp;&nbsp;\n" +
-                        "            <a href=\"reg.jsp\">[ 注册<span style=\"color: red;font-size: 12px;\">有惊喜</span> ]</a>\n" +
+                        "            <a href=\"login.jsp\">[ 登录 ]</a>&nbsp;&nbsp;\n" +
+                        "            <a href=\"reg.jsp\">[ 注册 ]</a>\n" +
                         "        </div>");
             else {
                 out.print("      <div class=\"head_right\" >\n" +
